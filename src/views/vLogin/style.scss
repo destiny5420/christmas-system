@@ -1,0 +1,126 @@
+@import '../../common/style/_globalstyle.scss';
+
+#main-login {
+  position: relative;
+  @include size(100%, 100vh);
+  background-color: rgb(88, 107, 100);
+}
+
+.window-box {
+  @include border();
+  @include size(800px, 570px);
+  max-width: 800px;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-area {
+  flex: 1;
+  z-index: -2;
+  background-color: $color_blue_end;
+}
+
+.login-area {
+  @include flex-layout(column);
+  position: relative;
+  flex: 1;
+  background-color: $color_orange;
+
+  $extra_value: 100px;
+
+  &::before {
+    @include size(100px, calc(100% + #{$extra_value}));
+    @include independent();
+    background-color: $color_orange;
+    z-index: -1;
+    top: 0;
+    left: -25px;
+    transform-origin: center center;
+    transform: translateY(calc(#{$extra_value} * 0.5 * -1)) rotateZ(5deg);
+  }
+}
+
+.login-panel {
+  @include size(300px, auto);
+  margin-bottom: 20px;
+  position: relative;
+  background-color: $color_white;
+  border-radius: 5px;
+  box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.75);
+}
+
+.login-title,
+.login-input {
+  margin-bottom: 10px;
+}
+
+.login-title {
+  @include flex-layout(row, space-between, center);
+  padding: 1rem 1.5rem;
+  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.15);
+  h3 {
+    margin: 0;
+  }
+}
+
+.login-input {
+  padding: 10px 14px;
+  form {
+    height: 100%;
+
+    background-color: #fff;
+  }
+
+  .forget-password {
+    cursor: pointer;
+    text-align: right;
+  }
+}
+
+input {
+  @include size(100%, 50px);
+  @include border(1px, solid, #d3d3d359);
+
+  font-size: 1.5rem;
+  padding: 0px 1.8rem;
+  margin-bottom: 8px;
+  background-color: #f5f8f9;
+  border-radius: 5px;
+  outline: none;
+}
+
+.login-btn {
+  height: 75px;
+  padding: 10px 10px;
+
+  button {
+    @include size(100%, 100%);
+    @include border(0px);
+    cursor: pointer;
+    background-color: $color_blue_start;
+    color: $color_white;
+    border-radius: 0.25rem;
+    outline: none;
+  }
+}
+
+.register {
+  @include size(250px, 50px);
+  @include flex-layout(column);
+  text-align: center;
+
+  h5 {
+    color: $color_white;
+    font-weight: 400;
+  }
+
+  h4 {
+    cursor: pointer;
+    color: $color_blue_start;
+  }
+}

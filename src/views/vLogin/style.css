@@ -217,6 +217,7 @@ input:focus {
           transform: translateX(-100%);
   -webkit-transition: all 0.4s cubic-bezier(0.5, 0.25, 0, 1);
   transition: all 0.4s cubic-bezier(0.5, 0.25, 0, 1);
+  pointer-events: none;
 }
 
 .btn:hover::before {

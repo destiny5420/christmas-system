@@ -153,6 +153,7 @@ input {
     display: block;
     transform: translateX(-100%);
     transition: all 0.4s cubic-bezier(0.5, 0.25, 0, 1);
+    pointer-events: none;
   }
 
   &:hover::before {

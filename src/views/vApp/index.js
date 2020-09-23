@@ -1,5 +1,5 @@
 export default {
-  name: "vApp",
+  name: 'vApp',
   props: {},
   components: {},
   data: function() {
@@ -15,5 +15,5 @@ export default {
   beforeUpdate: function() {},
   updated: function() {},
   beforeDestroy: function() {},
-  Destroy: function() {}
+  Destroy: function() {},
 };

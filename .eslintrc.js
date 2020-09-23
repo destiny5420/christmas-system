@@ -13,5 +13,6 @@ module.exports = {
     'space-before-function-paren': ['error', 'never'],
     'object-shorthand': [0, 'methods'],
     'func-names': 0,
+    'no-useless-return': 0,
   },
 };

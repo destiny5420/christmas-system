@@ -6,6 +6,16 @@ export default {
   components: {},
   data: function() {
     return {
+      url: {
+        signup: `${process.env.VUE_APP_HOST}/api/login/sign-up`,
+        signin: `${process.env.VUE_APP_HOST}/api/login/sign-in`,
+      },
+      signupData: {
+        name: '',
+        email: '',
+        password: '',
+        confirm_password: '',
+      },
       isAnimating: false,
       anim: {
         loginPanelFadeIn: null,
@@ -69,9 +79,41 @@ export default {
     },
     onRegisterCloseHandler: function() {
       const vm = this;
+
+      if (vm.isAnimating) {
+        return;
+      }
+
       document.querySelector('.login-area').classList.remove('register-status');
       vm.anim.loginPanelFadeIn.play();
       vm.registerPanelFadeIn.reverse();
+    },
+    onSignUpHandler: function() {
+      console.log('***** onSignUpHandler *****');
+      const vm = this;
+
+      if (vm.isAnimating) {
+        return;
+      }
+
+      vm.axios({
+        url: vm.url.signup,
+        method: 'post',
+        data: {
+          userName: vm.signupData.name,
+          userEmail: vm.signupData.email,
+          userPassword: vm.signupData.password,
+        },
+      })
+        .then((response) => {
+          console.log(response);
+          if (response.data.success) {
+            vm.onRegisterCloseHandler();
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     },
   },
   computed: {},

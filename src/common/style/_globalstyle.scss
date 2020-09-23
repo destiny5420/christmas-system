@@ -94,9 +94,9 @@ $color_grey_cloud: #ccc;
   stroke-width: $width;
 }
 
-@mixin independent() {
+@mixin independent($color: rgb(248, 130, 130)) {
   position: absolute;
   content: '';
-  background-color: rgb(248, 130, 130);
+  background-color: $color;
   z-index: 1;
 }

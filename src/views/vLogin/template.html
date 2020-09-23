@@ -1,12 +1,42 @@
 <div id="main-login">
   <div class="window-box">
-    <div class="img-area"></div>
+    <div class="register-area">
+      <div class="register-close" @click="onRegisterCloseHandler">
+        <font-awesome-icon icon="times" />
+      </div>
+      <div class="register-panel">
+        <div class="title">
+          <h3>REGISTER</h3>
+        </div>
+        <div class="input">
+          <form action="/sign-in">
+            <input type="email" value="" name="user-email" placeholder="Enter your email" />
+            <input
+              type="password"
+              value=""
+              name="user-password"
+              placeholder="Enter your password"
+            />
+            <input
+              type="password"
+              value=""
+              name="user-confirm-password"
+              placeholder="Confirm password"
+            />
+          </form>
+        </div>
+        <div class="btn">
+          <button></button>
+          <p>GO</p>
+        </div>
+      </div>
+    </div>
     <div class="login-area">
       <div class="login-panel">
-        <div class="login-title">
+        <div class="title">
           <h3>LOGIN</h3>
         </div>
-        <div class="login-input">
+        <div class="input">
           <form action="/sign-in">
             <input type="email" value="" name="user-email" placeholder="Enter your email" />
             <input
@@ -20,7 +50,7 @@
             忘記密碼
           </div>
         </div>
-        <div class="login-btn">
+        <div class="btn">
           <button></button>
           <p>SIGN IN</p>
         </div>
@@ -28,7 +58,7 @@
       <div class="register">
         <h5>Don't have an account yet?</h5>
         <h4>
-          <div class="account">Create an account</div>
+          <div class="account" @click="onRegisterHandler">Create an account</div>
         </h4>
       </div>
     </div>

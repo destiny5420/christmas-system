@@ -1,17 +1,49 @@
 <div id="main-login">
   <div class="window-box">
-    <div class="img-area"></div>
-    <div class="login-area">
-      <div class="login-panel">
-        <div class="login-title">
-          <h3>CHRISTMAS</h3>
+    <!-- <button @click="onSignUpGoogleHandler">Google Sign up</button> -->
+    <div class="register-area">
+      <div class="register-close" @click="onRegisterCloseHandler">
+        <font-awesome-icon icon="times" />
+      </div>
+      <div class="register-panel">
+        <div class="title">
+          <h3>REGISTER</h3>
         </div>
-        <div class="login-input">
-          <form action="/sign-in">
-            <input type="email" value="" name="user-email" placeholder="Enter your email" />
+        <div class="input">
+          <form>
+            <input type="text" v-model.trim="signupData.name" name="userName" placeholder="Name" />
+            <input type="email" v-model.trim="signupData.email" name="userEmail" placeholder="Email" />
             <input
               type="password"
-              value=""
+              v-model.trim="signupData.password"
+              name="userPassword"
+              placeholder="Password"
+            />
+            <input
+              type="password"
+              v-model="signupData.confirm_password"
+              name="user-confirm-password"
+              placeholder="Confirm password"
+            />
+            <div class="btn">
+              <input type="button" value="" @click="onSignUpHandler"></input>
+              <p>SIGN UP</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="login-area">
+      <div class="login-panel">
+        <div class="title">
+          <h3>LOGIN</h3>
+        </div>
+        <div class="input">
+          <form>
+            <input type="email" v-model.trim="signinData.email" name="user-email" placeholder="Enter your email" />
+            <input
+              type="password"
+              v-model.trim="signinData.password"
               name="user-password"
               placeholder="Enter your password"
             />
@@ -19,14 +51,17 @@
           <div class="forget-password">
             忘記密碼
           </div>
-        </div>
-        <div class="login-btn">
-          <button>SIGN IN</button>
+          <div class="btn">
+            <input type="submit" value="" @click="onSignInHandler"></input>
+            <p>SIGN UP</p>
+          </div>
         </div>
       </div>
       <div class="register">
         <h5>Don't have an account yet?</h5>
-        <h4>Create an account</h4>
+        <h4>
+          <div class="account" @click="onRegisterHandler">Create an account</div>
+        </h4>
       </div>
     </div>
   </div>

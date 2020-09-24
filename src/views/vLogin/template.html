@@ -10,7 +10,7 @@
           <h3>REGISTER</h3>
         </div>
         <div class="input">
-          <form :action="url.signup" method="post">
+          <form>
             <input type="text" v-model.trim="signupData.name" name="userName" placeholder="Name" />
             <input type="email" v-model.trim="signupData.email" name="userEmail" placeholder="Email" />
             <input
@@ -39,7 +39,7 @@
           <h3>LOGIN</h3>
         </div>
         <div class="input">
-          <form action="/sign-in">
+          <form>
             <input type="email" v-model.trim="signinData.email" name="user-email" placeholder="Enter your email" />
             <input
               type="password"

@@ -93,6 +93,7 @@ export default {
       document.querySelector('.login-area').classList.remove('register-status');
       vm.anim.loginPanelFadeIn.play();
       vm.registerPanelFadeIn.reverse();
+      vm.onCleanSignUpDate();
     },
     onSignUpHandler: function() {
       console.log('***** onSignUpHandler *****');
@@ -154,6 +155,16 @@ export default {
         .catch((err) => {
           console.error(err);
         });
+    },
+    onCleanSignUpDate: function() {
+      const vm = this;
+
+      vm.signupData = {
+        name: '',
+        email: '',
+        password: '',
+        confirm_password: '',
+      };
     },
   },
   computed: {},

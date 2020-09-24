@@ -1,4 +1,6 @@
 import { gsap } from 'gsap';
+import firebase from 'firebase/app';
+import db from '@/common/js/firebase';
 
 export default {
   name: 'vLogin',
@@ -15,6 +17,10 @@ export default {
         email: '',
         password: '',
         confirm_password: '',
+      },
+      signinData: {
+        email: '',
+        password: '',
       },
       isAnimating: false,
       anim: {
@@ -110,6 +116,40 @@ export default {
           if (response.data.success) {
             vm.onRegisterCloseHandler();
           }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
+    onSignInHandler: function() {
+      console.log('***** onSignInHandler *****');
+      const vm = this;
+
+      if (vm.isAnimating) {
+        return;
+      }
+
+      vm.axios({
+        url: vm.url.signin,
+        method: 'post',
+        data: {
+          userEmail: vm.signinData.email,
+          userPassword: vm.signinData.password,
+        },
+      })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
+    onSignUpGoogleHandler: function() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      db.auth()
+        .signInWithPopup(provider)
+        .then((result) => {
+          console.log('result: ', result);
         })
         .catch((err) => {
           console.error(err);

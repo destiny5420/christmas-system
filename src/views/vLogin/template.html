@@ -1,5 +1,6 @@
 <div id="main-login">
   <div class="window-box">
+    <!-- <button @click="onSignUpGoogleHandler">Google Sign up</button> -->
     <div class="register-area">
       <div class="register-close" @click="onRegisterCloseHandler">
         <font-awesome-icon icon="times" />
@@ -11,10 +12,10 @@
         <div class="input">
           <form :action="url.signup" method="post">
             <input type="text" v-model.trim="signupData.name" name="userName" placeholder="Name" />
-            <input type="email" v-model="signupData.email" name="userEmail" placeholder="Email" />
+            <input type="email" v-model.trim="signupData.email" name="userEmail" placeholder="Email" />
             <input
               type="password"
-              v-model="signupData.password"
+              v-model.trim="signupData.password"
               name="userPassword"
               placeholder="Password"
             />
@@ -39,10 +40,10 @@
         </div>
         <div class="input">
           <form action="/sign-in">
-            <input type="email" value="" name="user-email" placeholder="Enter your email" />
+            <input type="email" v-model.trim="signinData.email" name="user-email" placeholder="Enter your email" />
             <input
               type="password"
-              value=""
+              v-model.trim="signinData.password"
               name="user-password"
               placeholder="Enter your password"
             />
@@ -51,7 +52,7 @@
             忘記密碼
           </div>
           <div class="btn">
-            <input type="submit" value=""></input>
+            <input type="submit" value="" @click="onSignInHandler"></input>
             <p>SIGN UP</p>
           </div>
         </div>

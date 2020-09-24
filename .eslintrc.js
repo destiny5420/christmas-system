@@ -14,5 +14,6 @@ module.exports = {
     'object-shorthand': [0, 'methods'],
     'func-names': 0,
     'no-useless-return': 0,
+    'linebreak-style': 0,
   },
 };

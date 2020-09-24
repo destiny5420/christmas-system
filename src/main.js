@@ -12,6 +12,7 @@ Vue.use(VueAxios, axios);
 
 library.add(faUserSecret, faTimes);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
+axios.defaults.withCredentials = true;
 
 Vue.config.productionTip = false;
 

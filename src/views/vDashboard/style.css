@@ -6,6 +6,12 @@
   position: relative;
 }
 
+#toggle-btn {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+}
+
 #side-bar {
   border: 1px solid black;
   width: 300px;

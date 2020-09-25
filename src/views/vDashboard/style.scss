@@ -7,6 +7,12 @@
   position: relative;
 }
 
+#toggle-btn {
+  @include border();
+  @include size(100px, 100px);
+  // @include independent();
+}
+
 $side-bar-width: 300px;
 #side-bar {
   @include border();

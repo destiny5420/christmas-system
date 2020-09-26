@@ -11,6 +11,8 @@ export default {
       url: {
         signup: `${process.env.VUE_APP_HOST}/api/login/sign-up`,
         signin: `${process.env.VUE_APP_HOST}/api/login/sign-in`,
+        signinCheck: `${process.env.VUE_APP_HOST}/api/user/check`,
+        signout: `${process.env.VUE_APP_HOST}/api/user/logout`,
       },
       signupData: {
         name: '',
@@ -165,6 +167,34 @@ export default {
         password: '',
         confirm_password: '',
       };
+    },
+    onCheckSignInHandler: function() {
+      const vm = this;
+
+      vm.axios({
+        url: vm.url.signinCheck,
+        method: 'post',
+      })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
+    onLogoutHandler: function() {
+      const vm = this;
+
+      vm.axios({
+        url: vm.url.signout,
+        method: 'post',
+      })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     },
   },
   computed: {},

@@ -1,0 +1,70 @@
+@import '../../common/style/_globalstyle.scss';
+
+#main-dashboard {
+  @include border();
+  @include size(100%, 100vh);
+  min-height: 100vh;
+  position: relative;
+}
+
+#toggle-btn {
+  @include border();
+  @include size(100px, 100px);
+  // @include independent();
+}
+
+$side-bar-width: 300px;
+#side-bar {
+  @include border();
+  @include size($side-bar-width, auto);
+  @include independent();
+  display: inline-block;
+  margin: 0;
+  min-height: 100vh;
+}
+
+#view-port {
+  @include border();
+  @include size(calc(100% - #{$side-bar-width}), 500px);
+  display: inline-block;
+  margin-left: $side-bar-width;
+  position: relative;
+  background-color: rgba(65, 105, 225, 0.548);
+}
+
+.top-bar {
+  @include border();
+  @include size(100%, 50px);
+  @include flex-layout(row, space-between, center);
+  padding: 10px 10px;
+  position: relative;
+}
+
+.user-info {
+  @include border();
+  @include size(100%, 125px);
+}
+
+.select-item-block {
+  @include border();
+  @include size(100%, 500px);
+}
+
+.select-item-title {
+  @include border();
+  @include size(100%, auto);
+  text-align: left;
+  padding: 10px 10px;
+
+  h4 {
+    margin: 0;
+  }
+}
+
+.bar-footer {
+  @include border();
+  @include size(100%, 35px);
+  @include independent();
+
+  bottom: 0px;
+}

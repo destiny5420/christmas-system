@@ -23,7 +23,7 @@ $index-toggle-btn: 2;
 $side-bar-width: 300px;
 #side-bar {
   @include border();
-  @include size($side-bar-width, auto);
+  @include size($side-bar-width, 100vh);
   @include independent();
   display: inline-block;
   margin: 0;
@@ -42,34 +42,38 @@ $side-bar-width: 300px;
 
 .top-bar {
   @include border();
-  @include size(100%, 50px);
+  @include size(100%, 7%);
   @include flex-layout(row, space-between, center);
   padding: 10px 10px;
+  min-height: 57px;
   position: relative;
 }
 
 .user-info {
   @include border();
-  @include size(100%, 125px);
+  @include size(100%, 13%);
   @include flex-layout(row, flex-start, center);
   padding: 10px;
+  min-height: 106px;
 }
 
+$user-pix-height: 80px;
 .user-pic {
   @include border();
-  @include size(100px, 100px);
+  @include size($user-pix-height, $user-pix-height);
   display: inline-block;
 }
 
 .user-content {
   @include border();
-  @include size(160px, 100px);
+  @include size(160px, $user-pix-height);
   display: inline-block;
 }
 
 .select-item-block {
   @include border();
-  @include size(100%, 500px);
+  @include size(100%, calc(100vh - 57px - 106px - 41px));
+  overflow: auto;
 }
 
 .select-item-title {
@@ -85,8 +89,8 @@ $side-bar-width: 300px;
 
 .bar-footer {
   @include border();
-  @include size(100%, 35px);
+  @include size(100%, 5%);
   @include independent();
-
+  min-height: 41px;
   bottom: 0px;
 }

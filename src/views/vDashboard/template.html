@@ -1,14 +1,23 @@
 <div id="main-dashboard">
-  <div id="toggle-btn">Go</div>
+  <div id="toggle-btn" @click="onToggleHandler"></div>
   <div id="side-bar">
     <div class="top-bar">
       <h4>PRO SIDERBAR</h4>
       <button @click="onCloseSideBar">Close</button>
     </div>
-    <div class="user-info"></div>
+    <div class="user-info">
+      <div class="user-pic"></div>
+      <div class="user-content">
+        <h3>Raymon</h3>
+        <h5>Administrator</h5>
+        <h5>status</h5>
+      </div>
+    </div>
     <div class="select-item-block">
       <div class="select-item-title">
         <h4>General</h4>
+        <cSelect :prop_optionLenght="3" prop_content="Dashboard" />
+        <cSelect :prop_optionLenght="1" prop_content="Setting" />
       </div>
       <div class="select-item-title">
         <h4>Extra</h4>

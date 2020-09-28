@@ -8,8 +8,17 @@
 
 #toggle-btn {
   border: 1px solid black;
-  width: 100px;
-  height: 100px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  content: '';
+  background-color: #f88282;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 0px 5px 5px 0px;
+  top: 10px;
+  left: -30px;
+  z-index: 2;
 }
 
 #side-bar {
@@ -29,6 +38,7 @@
   border: 1px solid black;
   width: calc(100% - 300px);
   height: 500px;
+  border-width: 5px;
   display: inline-block;
   margin-left: 300px;
   position: relative;
@@ -60,6 +70,34 @@
   border: 1px solid black;
   width: 100%;
   height: 125px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+.user-pic {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.user-content {
+  border: 1px solid black;
+  width: 160px;
+  height: 100px;
+  display: inline-block;
 }
 
 .select-item-block {
@@ -76,8 +114,12 @@
   padding: 10px 10px;
 }
 
-.select-item-title h4 {
-  margin: 0;
+.select-item-title > h4 {
+  margin-bottom: 10px;
+}
+
+.option {
+  margin: 7px 0px 7px 20px;
 }
 
 .bar-footer {

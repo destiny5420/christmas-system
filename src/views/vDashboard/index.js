@@ -1,14 +1,18 @@
 import { gsap } from 'gsap';
+import cSelect from '@/components/cSelect/index.vue';
 
 export default {
   name: 'vDashboard',
   props: {},
-  components: {},
+  components: {
+    cSelect,
+  },
   data: function() {
     return {
       anim: {
         sideBarClose: null,
         viewPort: null,
+        toggle_btn: null,
       },
       sideBarToggle: false,
     };
@@ -23,6 +27,11 @@ export default {
         .timeline()
         .to('#side-bar', {
           x: -300,
+          duration: 0.5,
+          ease: 'sine.out',
+        })
+        .to('#toggle-btn', {
+          left: 0,
           duration: 0.5,
           ease: 'sine.out',
         })
@@ -42,8 +51,28 @@ export default {
     onCloseSideBar: function() {
       console.log('** onCloseSideBar **');
       const vm = this;
-      vm.anim.sideBarClose.play();
-      vm.anim.viewPort.play();
+      vm.anim.sideBarClose.restart();
+      vm.anim.viewPort.restart();
+    },
+    onToggleHandler: function() {
+      console.log('** onTestHandler **');
+
+      gsap
+        .timeline()
+        .to('#toggle-btn', {
+          left: -30,
+          duration: 0.5,
+          ease: 'sine.out',
+        })
+        .eventCallback('onComplete', () => {
+          gsap.timeline().to('#side-bar', { x: 0, duration: 0.5, ease: 'sine.out' });
+          gsap.timeline().to('#view-port', {
+            marginLeft: 300,
+            width: 'calc(100% - 300px)',
+            duration: 0.5,
+            ease: 'sine.out',
+          });
+        });
     },
   },
   computed: {},

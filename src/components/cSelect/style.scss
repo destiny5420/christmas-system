@@ -1,0 +1,55 @@
+@import '../../common/style/_globalstyle.scss';
+
+$select-height: 40px;
+.select {
+  @include border();
+  @include size(100%, $select-height);
+  @include flex-layout(row, flex-start, center);
+  position: relative;
+  cursor: pointer;
+}
+
+.select-icon-img,
+.select-content,
+.select-icon-arrow {
+  display: inline-block;
+}
+
+.select-icon-img {
+  @include border();
+  @include size($select-height, $select-height);
+  border-radius: 5px;
+}
+
+.select-content {
+  margin-left: 10px;
+}
+
+#select-icon-arrow {
+  @include independent();
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+
+.select-options-block {
+  @include size(100%, auto);
+  @include border();
+  overflow: hidden;
+  transition: 0.25s linear;
+}
+
+@for $i from 1 to 10 {
+  .option-count-#{$i} {
+    max-height: 37px * $i;
+  }
+}
+
+.block-open {
+  max-height: 0px;
+}
+
+.option {
+  margin: 7px 0px 7px 20px;
+}

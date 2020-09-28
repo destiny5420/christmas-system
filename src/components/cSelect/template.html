@@ -2,7 +2,9 @@
   <div class="select" @click="onToggleSelectHandler">
     <div class="select-icon-img"></div>
     <div class="select-content"><h4>{{ prop_content }}</h4></div>
-    <font-awesome-icon id="select-icon-arrow" icon="chevron-right" />
+    <div class="select-icon-arrow" :class="{ 'arrow-open': isOpen }">
+      <font-awesome-icon icon="chevron-right" />
+    </div>
   </div>
   <div class="select-options-block" :class="classOptionBlock">
     <div v-for="(item, index) in prop_optionLenght" :key="index">

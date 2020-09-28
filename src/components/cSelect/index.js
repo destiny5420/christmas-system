@@ -1,6 +1,3 @@
-// import { gsap } from 'gsap';
-import { String } from 'core-js';
-
 export default {
   name: 'cSelect',
   props: {
@@ -22,29 +19,6 @@ export default {
   methods: {
     onToggleSelectHandler: function() {
       const vm = this;
-      // if (vm.isOpen) {
-      //   gsap.timeline().to('#select-icon-arrow', {
-      //     rotateZ: 0,
-      //     duration: 0.25,
-      //     ease: 'linear',
-      //   });
-      //   gsap.timeline().to('.select-options-block', {
-      //     height: 0,
-      //     duration: 0.25,
-      //     ease: 'linear',
-      //   });
-      // } else {
-      //   gsap.timeline().to('#select-icon-arrow', {
-      //     rotateZ: 90,
-      //     duration: 0.25,
-      //     ease: 'linear',
-      //   });
-      //   gsap.timeline().to('.select-options-block', {
-      //     height: 'auto',
-      //     duration: 0.25,
-      //     ease: 'linear',
-      //   });
-      // }
       vm.isOpen = !vm.isOpen;
     },
   },

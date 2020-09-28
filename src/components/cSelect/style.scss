@@ -25,12 +25,16 @@ $select-height: 40px;
   margin-left: 10px;
 }
 
-#select-icon-arrow {
-  @include independent();
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+.select-icon-arrow {
+  @include independent(transparent);
+  @include size(30px, 30px);
+  @include flex-layout(row, center, center);
+  right: 4px;
+  top: 4px;
+  transform-origin: center;
+  transform: rotateZ(90deg);
   font-size: 14px;
+  transition: 0.25s linear;
 }
 
 .select-options-block {
@@ -38,6 +42,10 @@ $select-height: 40px;
   @include border();
   overflow: hidden;
   transition: 0.25s linear;
+}
+
+.option {
+  margin: 7px 0px 7px 20px;
 }
 
 @for $i from 1 to 10 {
@@ -50,6 +58,6 @@ $select-height: 40px;
   max-height: 0px;
 }
 
-.option {
-  margin: 7px 0px 7px 20px;
+.arrow-open {
+  transform: rotateZ(0deg);
 }

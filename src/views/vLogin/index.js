@@ -142,6 +142,11 @@ export default {
       })
         .then((response) => {
           console.log(response);
+          if (response.data.success) {
+            this.$router.push({
+              name: 'vDashboard',
+            });
+          }
         })
         .catch((err) => {
           console.error(err);
@@ -173,20 +178,6 @@ export default {
 
       vm.axios({
         url: vm.url.signinCheck,
-        method: 'post',
-      })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    },
-    onLogoutHandler: function() {
-      const vm = this;
-
-      vm.axios({
-        url: vm.url.signout,
         method: 'post',
       })
         .then((response) => {

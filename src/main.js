@@ -43,3 +43,32 @@ new Vue({
   store,
   render: (h) => h(vApp),
 }).$mount('#app');
+
+// router goalkeeper
+router.beforeEach((to, from, next) => {
+  // console.log(
+  //   "-- [ router.beforeEach ]\n/ to: ",
+  //   to,
+  //   "\n/ from: ",
+  //   from,
+  //   "\n/ next: ",
+  //   next
+  // );
+  next();
+  if (to.meta.requiresAuth) {
+    // store.commit('TOGGLE_LOADING_LOGIN', true);
+    // let api = `${process.env.VUE_APP_APIPATH}/api/user/check`;
+    // // console.log(`-- [ Check API: Check ] / api: ${api}`);
+    // axios.post(api).then((response) => {
+    //   store.commit('TOGGLE_LOADING_LOGIN', false);
+    //   // console.log("-- [ Response: Check ] / res: ", response);
+    //   if (response.data.success) {
+    //     next();
+    //   } else {
+    //     next('/login');
+    //   }
+    // });
+  } else {
+    next();
+  }
+});

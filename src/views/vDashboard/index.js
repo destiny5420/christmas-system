@@ -9,6 +9,9 @@ export default {
   },
   data: function() {
     return {
+      url: {
+        signout: `${process.env.VUE_APP_HOST}/api/user/logout`,
+      },
       title: '聖誕節抽抽樂系統',
       anim: {
         sideBarClose: null,
@@ -100,6 +103,25 @@ export default {
             duration: 0.5,
             ease: 'sine.out',
           });
+        });
+    },
+    onLogoutHandler: function() {
+      const vm = this;
+
+      vm.axios({
+        url: vm.url.signout,
+        method: 'post',
+      })
+        .then((response) => {
+          console.log(response);
+          if (response.data.success) {
+            vm.$router.push({
+              name: 'vLogin',
+            });
+          }
+        })
+        .catch((err) => {
+          console.error(err);
         });
     },
   },

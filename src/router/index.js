@@ -21,12 +21,9 @@ const routes = [
   },
   {
     path: '/dashboard',
-    redirect: '/dashboard/home',
-  },
-  {
-    path: '/dashboard',
     name: 'vDashboard',
     component: Dashboard,
+    redirect: '/dashboard/home',
     meta: { requiresAuth: true },
     beforeEnter: (to, from, next) => {
       if (to.meta.requiresAuth) {

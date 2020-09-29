@@ -2,33 +2,52 @@
 
 $select-height: 40px;
 .select {
-  @include border();
   @include size(100%, $select-height);
   @include flex-layout(row, flex-start, center);
   position: relative;
   cursor: pointer;
+
+  &:hover {
+    .select-icon-img,
+    .select-content,
+    .select-icon-arrow {
+      color: #9cacbd;
+    }
+  }
 }
 
 .select-icon-img,
 .select-content,
 .select-icon-arrow {
   display: inline-block;
+
+  transition: 0.15s linear;
 }
 
 .select-icon-img {
-  @include border();
-  @include size($select-height, $select-height);
+  @include size(25px, 25px);
+  @include flex-layout(row, center, center);
+  background-color: #3c3d47;
+  color: $color_third;
+  font-size: 1.2rem;
   border-radius: 5px;
 }
 
 .select-content {
-  margin-left: 10px;
+  margin-left: 15px;
+  color: $color_third;
+
+  h5 {
+    font-weight: 400;
+  }
 }
 
 .select-icon-arrow {
   @include independent(transparent);
   @include size(30px, 30px);
   @include flex-layout(row, center, center);
+  color: $color_third;
+  user-select: none;
   right: 4px;
   top: 4px;
   transform-origin: center;
@@ -39,13 +58,14 @@ $select-height: 40px;
 
 .select-options-block {
   @include size(100%, auto);
-  @include border();
   overflow: hidden;
   transition: 0.25s linear;
 }
 
 .option {
-  margin: 7px 0px 7px 20px;
+  cursor: pointer;
+  padding: 7px 0px 7px 0px;
+  background-color: #3a424f;
 }
 
 @for $i from 1 to 10 {

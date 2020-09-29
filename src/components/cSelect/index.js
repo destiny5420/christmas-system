@@ -9,6 +9,10 @@ export default {
       type: Number,
       required: true,
     },
+    prop_giftIcon: {
+      type: String,
+      default: 'exclamation',
+    },
   },
   components: {},
   data: function() {

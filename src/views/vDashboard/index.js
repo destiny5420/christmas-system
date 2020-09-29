@@ -9,10 +9,16 @@ export default {
   },
   data: function() {
     return {
+      title: '聖誕節抽抽樂系統',
       anim: {
         sideBarClose: null,
         viewPort: null,
         toggle_btn: null,
+      },
+      user: {
+        name: 'Raymen',
+        character: 'Administrator',
+        status: 0,
       },
       sideBarToggle: false,
     };

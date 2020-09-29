@@ -1,51 +1,35 @@
 <div id="main-dashboard">
-  <div id="toggle-btn" @click="onToggleHandler"></div>
+  <div id="toggle-btn" @click="onToggleHandler">
+    <font-awesome-icon icon="bars" />
+  </div>
   <div id="side-bar">
     <div class="top-bar">
-      <h4>PRO SIDERBAR</h4>
-      <button @click="onCloseSideBar">Close</button>
+      <h4>{{ title }}</h4>
+      <font-awesome-icon name="close" @click="onCloseSideBar" icon="times" />
     </div>
     <div class="user-info">
-      <div class="user-pic"></div>
+      <div class="user-pic">
+        <img
+          src="https://i.pinimg.com/originals/f7/5d/60/f75d60a05e6803d8ef1d1acd4dd7f4f2.jpg"
+          alt=""
+        />
+      </div>
       <div class="user-content">
-        <h3>Raymon</h3>
-        <h5>Administrator</h5>
-        <h5>status</h5>
+        <h3>{{ user.name }}</h3>
+        <h5>{{ user.character }}</h5>
+        <h5>{{ user.status }}</h5>
       </div>
     </div>
     <div class="select-item-block">
       <div class="select-item-title">
-        <h4>General</h4>
-        <cSelect :prop_optionLenght="3" prop_content="Dashboard" />
-        <cSelect :prop_optionLenght="1" prop_content="Setting" />
-      </div>
-      <div class="select-item-title">
-        <h4>General</h4>
-        <cSelect :prop_optionLenght="3" prop_content="Dashboard" />
-        <cSelect :prop_optionLenght="1" prop_content="Setting" />
-      </div>
-      <div class="select-item-title">
-        <h4>General</h4>
-        <cSelect :prop_optionLenght="3" prop_content="Dashboard" />
-        <cSelect :prop_optionLenght="1" prop_content="Setting" />
-      </div>
-      <div class="select-item-title">
-        <h4>General</h4>
-        <cSelect :prop_optionLenght="3" prop_content="Dashboard" />
-        <cSelect :prop_optionLenght="1" prop_content="Setting" />
-      </div>
-      <div class="select-item-title">
-        <h4>General</h4>
-        <cSelect :prop_optionLenght="3" prop_content="Dashboard" />
-        <cSelect :prop_optionLenght="1" prop_content="Setting" />
-      </div>
-      <div class="select-item-title">
-        <h4>General</h4>
-        <cSelect :prop_optionLenght="3" prop_content="Dashboard" />
-        <cSelect :prop_optionLenght="1" prop_content="Setting" />
+        <h5>General</h5>
+        <cSelect :prop_optionLenght="3" prop_content="Gift" prop_giftIcon="gift" />
+        <cSelect :prop_optionLenght="1" prop_content="Setting" prop_giftIcon="cog" />
       </div>
     </div>
-    <div class="bar-footer"></div>
+    <div class="bar-footer">
+      <font-awesome-icon class="log-out" icon="sign-out-alt" />
+    </div>
   </div>
   <div id="view-port"></div>
 </div>

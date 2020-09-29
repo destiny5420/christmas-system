@@ -3,17 +3,18 @@
 $index-toggle-btn: 2;
 
 #main-dashboard {
-  @include border();
   @include size(100%, auto);
   min-height: 100vh;
   position: relative;
 }
 
 #toggle-btn {
-  @include border();
-  @include size(30px, 30px);
+  @include size(30px, 25px);
   @include independent();
+  @include flex-layout(row, center, center);
   cursor: pointer;
+  background-color: $color_main;
+  color: #d8d8d8;
   border-radius: 0px 5px 5px 0px;
   top: 10px;
   left: -30px;
@@ -22,12 +23,12 @@ $index-toggle-btn: 2;
 
 $side-bar-width: 300px;
 #side-bar {
-  @include border();
   @include size($side-bar-width, 100vh);
   @include independent();
   display: inline-block;
   margin: 0;
   min-height: 100vh;
+  background-color: $color_main;
 }
 
 #view-port {
@@ -41,56 +42,90 @@ $side-bar-width: 300px;
 }
 
 .top-bar {
-  @include border();
   @include size(100%, 7%);
   @include flex-layout(row, space-between, center);
   padding: 10px 10px;
   min-height: 57px;
   position: relative;
+  color: $color_third;
+  border-bottom: 1px solid rgba($color: $color_third, $alpha: 0.2);
+
+  svg[name='close'] {
+    cursor: pointer;
+    transition: 0.1s linear;
+
+    &:hover {
+      color: $color_third_hover;
+    }
+  }
 }
 
 .user-info {
-  @include border();
   @include size(100%, 13%);
   @include flex-layout(row, flex-start, center);
+  border-bottom: 1px solid rgba($color: $color_third, $alpha: 0.2);
   padding: 10px;
   min-height: 106px;
 }
 
 $user-pix-height: 80px;
 .user-pic {
-  @include border();
   @include size($user-pix-height, $user-pix-height);
   display: inline-block;
+  margin-right: 10px;
+
+  img {
+    @include size(100%, 100%);
+  }
 }
 
 .user-content {
-  @include border();
   @include size(160px, $user-pix-height);
   display: inline-block;
+
+  > h3 {
+    color: $color_font_main;
+  }
+
+  > h5 {
+    color: $color_third;
+    font-weight: 100;
+  }
 }
 
 .select-item-block {
-  @include border();
   @include size(100%, calc(100vh - 57px - 106px - 41px));
   overflow: auto;
 }
 
 .select-item-title {
-  @include border();
   @include size(100%, auto);
+  user-select: none;
   text-align: left;
-  padding: 10px 10px;
+  padding: 5px 20px;
+  color: $color_font_main;
 
-  > h4 {
-    margin-bottom: 10px;
+  > h5 {
+    margin: 10px 0px;
   }
 }
 
 .bar-footer {
-  @include border();
   @include size(100%, 5%);
   @include independent();
+  @include flex-layout(row, center, center);
   min-height: 41px;
   bottom: 0px;
+  background-color: $color_second;
+  box-shadow: 0px -3px 7px 0px #0000002b;
+}
+
+.log-out {
+  cursor: pointer;
+  color: $color_third;
+  transition: 0.2s linear;
+
+  &:hover {
+    color: $color_third_hover;
+  }
 }

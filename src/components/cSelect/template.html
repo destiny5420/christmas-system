@@ -1,7 +1,9 @@
 <div>
   <div class="select" @click="onToggleSelectHandler">
-    <div class="select-icon-img"></div>
-    <div class="select-content"><h4>{{ prop_content }}</h4></div>
+    <div class="select-icon-img">
+      <font-awesome-icon :icon="prop_giftIcon" />
+    </div>
+    <div class="select-content"><h5>{{ prop_content }}</h5></div>
     <div class="select-icon-arrow" :class="{ 'arrow-open': isOpen }">
       <font-awesome-icon icon="chevron-right" />
     </div>

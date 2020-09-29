@@ -10,6 +10,7 @@ export default {
   data: function() {
     return {
       url: {
+        signinCheck: `${process.env.VUE_APP_HOST}/api/user/check`,
         signout: `${process.env.VUE_APP_HOST}/api/user/logout`,
       },
       title: '聖誕節抽抽樂系統',
@@ -124,11 +125,34 @@ export default {
           console.error(err);
         });
     },
+    onCheckSignInHandler: function() {
+      const vm = this;
+
+      vm.axios({
+        url: vm.url.signinCheck,
+        method: 'post',
+      })
+        .then((response) => {
+          console.log(response);
+
+          if (response.data.success === false) {
+            vm.$router.push({
+              name: 'vLogin',
+            });
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
   },
   computed: {},
   // life cycle
   beforeCreate: function() {},
-  created: function() {},
+  created: function() {
+    // const vm = this;
+    // vm.onCheckSignInHandler();
+  },
   beforeMounted: function() {},
   mounted: function() {
     const vm = this;

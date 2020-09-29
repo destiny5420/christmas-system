@@ -4,6 +4,7 @@ import Login from '@/views/vLogin/index.vue';
 import Dashboard from '@/views/vDashboard/index.vue';
 import DashboardCreate from '@/views/vDashboardHome/index.vue';
 import DashboardCreateRoomGift from '@/views/vDashboardCreateRoomGift/index.vue';
+import axios from 'axios';
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,7 @@ const routes = [
     path: '/login',
     name: 'vLogin',
     component: Login,
+    meta: { requiresAuth: false },
   },
   {
     path: '/dashboard',
@@ -26,6 +28,23 @@ const routes = [
     name: 'vDashboard',
     component: Dashboard,
     meta: { requiresAuth: true },
+    beforeEnter: (to, from, next) => {
+      if (to.meta.requiresAuth) {
+        const api = `${process.env.VUE_APP_HOST}/api/user/check`;
+        axios.post(api).then((response) => {
+          console.log(response);
+          if (response.data.success) {
+            next();
+          } else {
+            next({
+              name: 'vLogin',
+            });
+          }
+        });
+      } else {
+        next();
+      }
+    },
     children: [
       {
         path: 'home',

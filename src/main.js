@@ -46,29 +46,45 @@ new Vue({
 
 // router goalkeeper
 router.beforeEach((to, from, next) => {
-  // console.log(
-  //   "-- [ router.beforeEach ]\n/ to: ",
-  //   to,
-  //   "\n/ from: ",
-  //   from,
-  //   "\n/ next: ",
-  //   next
-  // );
+  // console.log('-- [ router.beforeEach ]\n/ to: ', to, '\n/ from: ', from, '\n/ next: ', next);
   next();
-  if (to.meta.requiresAuth) {
-    // store.commit('TOGGLE_LOADING_LOGIN', true);
-    // let api = `${process.env.VUE_APP_APIPATH}/api/user/check`;
-    // // console.log(`-- [ Check API: Check ] / api: ${api}`);
-    // axios.post(api).then((response) => {
-    //   store.commit('TOGGLE_LOADING_LOGIN', false);
-    //   // console.log("-- [ Response: Check ] / res: ", response);
-    //   if (response.data.success) {
-    //     next();
-    //   } else {
-    //     next('/login');
-    //   }
-    // });
-  } else {
-    next();
-  }
+  // *** Plan A ***
+  // if (to.matched[0].name === 'vDashboard') {
+  //   if (to.matched.some((record) => record.meta.requiresAuth)) {
+  //     const api = `${process.env.VUE_APP_HOST}/api/user/check`;
+  //     axios.post(api).then((response) => {
+  //       console.log(response.data);
+  //       if (response.data.success === false) {
+  //         next({
+  //           name: 'vLogin',
+  //         });
+  //       } else {
+  //         next();
+  //       }
+  //     });
+  //   } else {
+  //     next();
+  //   }
+  // } else {
+  //   next();
+  // }
+
+  // *** Plan B ***
+  // if (to.meta.requiresAuth) {
+  //   // next('/login');
+  //   const api = `${process.env.VUE_APP_HOST}/api/user/check`;
+
+  //   axios.post(api).then((response) => {
+  //     console.log(response.data);
+  //     if (response.data.success) {
+  //       next();
+  //     } else {
+  //       next({
+  //         name: 'vLogin',
+  //       });
+  //     }
+  //   });
+  // } else {
+  //   next();
+  // }
 });

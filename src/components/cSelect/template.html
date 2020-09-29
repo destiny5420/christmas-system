@@ -1,7 +1,7 @@
 <div>
   <div class="select" @click="onToggleSelectHandler">
     <div class="select-icon-img">
-      <font-awesome-icon :icon="prop_giftIcon" />
+      <font-awesome-icon :icon="prop_icon" />
     </div>
     <div class="select-content"><h5>{{ prop_content }}</h5></div>
     <div class="select-icon-arrow" :class="{ 'arrow-open': isOpen }">
@@ -9,9 +9,9 @@
     </div>
   </div>
   <div class="select-options-block" :class="classOptionBlock">
-    <div v-for="(item, index) in prop_optionLenght" :key="index">
+    <div v-for="(item, index) in prop_options" :key="index">
       <div class="option">
-        <h5>option - 1</h5>
+        <h5>{{ item.title }}</h5>
       </div>
     </div>
   </div>

@@ -20,6 +20,33 @@ export default {
         character: 'Administrator',
         status: 0,
       },
+      optionData: [
+        {
+          title: 'General',
+          Datas: [
+            {
+              text: 'Gift',
+              icon: 'gift',
+              info: [
+                { title: 'Create', path: '' },
+                { title: '#75B5D', path: '' },
+                { title: '#A64F3', path: '' },
+                { title: '#J73FG', path: '' },
+              ],
+            },
+            {
+              text: 'Setting',
+              icon: 'cog',
+              info: [
+                { title: 'Create', path: '' },
+                { title: '#75B5D', path: '' },
+                { title: '#A64F3', path: '' },
+                { title: '#J73FG', path: '' },
+              ],
+            },
+          ],
+        },
+      ],
       sideBarToggle: false,
     };
   },

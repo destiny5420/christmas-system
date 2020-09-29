@@ -21,10 +21,11 @@
       </div>
     </div>
     <div class="select-item-block">
-      <div class="select-item-title">
-        <h5>General</h5>
-        <cSelect :prop_optionLenght="3" prop_content="Gift" prop_giftIcon="gift" />
-        <cSelect :prop_optionLenght="1" prop_content="Setting" prop_giftIcon="cog" />
+      <div class="select-item-title" v-for="(item, index) in optionData" :key="index">
+        <h5>{{ item.title }}</h5>
+        <div v-for="(cItem, cIndex) in item.Datas" :key="cIndex">
+          <cSelect :prop_options="cItem.info" :prop_content="cItem.text" :prop_icon="cItem.icon" />
+        </div>
       </div>
     </div>
     <div class="bar-footer">

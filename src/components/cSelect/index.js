@@ -5,11 +5,11 @@ export default {
       type: String,
       required: true,
     },
-    prop_optionLenght: {
-      type: Number,
+    prop_options: {
+      type: Array,
       required: true,
     },
-    prop_giftIcon: {
+    prop_icon: {
       type: String,
       default: 'exclamation',
     },
@@ -32,16 +32,16 @@ export default {
         const vm = this;
         return {
           'block-open': vm.isOpen,
-          'option-count-1': vm.prop_optionLenght === 1,
-          'option-count-2': vm.prop_optionLenght === 2,
-          'option-count-3': vm.prop_optionLenght === 3,
-          'option-count-4': vm.prop_optionLenght === 4,
-          'option-count-5': vm.prop_optionLenght === 5,
-          'option-count-6': vm.prop_optionLenght === 6,
-          'option-count-7': vm.prop_optionLenght === 7,
-          'option-count-8': vm.prop_optionLenght === 8,
-          'option-count-9': vm.prop_optionLenght === 9,
-          'option-count-10': vm.prop_optionLenght === 10,
+          'option-count-1': vm.prop_options.length === 1,
+          'option-count-2': vm.prop_options.length === 2,
+          'option-count-3': vm.prop_options.length === 3,
+          'option-count-4': vm.prop_options.length === 4,
+          'option-count-5': vm.prop_options.length === 5,
+          'option-count-6': vm.prop_options.length === 6,
+          'option-count-7': vm.prop_options.length === 7,
+          'option-count-8': vm.prop_options.length === 8,
+          'option-count-9': vm.prop_options.length === 9,
+          'option-count-10': vm.prop_options.length === 10,
         };
       },
     },

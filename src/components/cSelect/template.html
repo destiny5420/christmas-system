@@ -11,6 +11,7 @@
   <div class="select-options-block" :class="classOptionBlock">
     <div v-for="(item, index) in prop_options" :key="index">
       <div class="option">
+        <font-awesome-icon class="option-icon" :icon="item.icon" />
         <h5>{{ item.title }}</h5>
       </div>
     </div>

@@ -74,7 +74,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px 10px;
+  padding: 10px 20px;
   min-height: 57px;
   position: relative;
   color: #697180;
@@ -108,7 +108,7 @@
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid rgba(105, 113, 128, 0.2);
-  padding: 10px;
+  padding: 10px 20px;
   min-height: 106px;
 }
 

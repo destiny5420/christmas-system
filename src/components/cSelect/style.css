@@ -68,8 +68,8 @@
   content: '';
   background-color: transparent;
   z-index: 1;
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,8 +88,8 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  right: 4px;
-  top: 4px;
+  right: 0px;
+  top: 25%;
   -webkit-transform-origin: center;
           transform-origin: center;
   -webkit-transform: rotateZ(90deg);
@@ -108,8 +108,32 @@
 }
 
 .option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
-  padding: 7px 0px 7px 0px;
+  padding: 7px 0px 7px 40px;
+  background-color: rgba(58, 66, 79, 0.3);
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.option svg {
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+.option:hover {
   background-color: #3a424f;
 }
 

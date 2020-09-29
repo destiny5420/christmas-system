@@ -44,7 +44,7 @@ $side-bar-width: 300px;
 .top-bar {
   @include size(100%, 7%);
   @include flex-layout(row, space-between, center);
-  padding: 10px 10px;
+  padding: 10px 20px;
   min-height: 57px;
   position: relative;
   color: $color_third;
@@ -64,7 +64,7 @@ $side-bar-width: 300px;
   @include size(100%, 13%);
   @include flex-layout(row, flex-start, center);
   border-bottom: 1px solid rgba($color: $color_third, $alpha: 0.2);
-  padding: 10px;
+  padding: 10px 20px;
   min-height: 106px;
 }
 

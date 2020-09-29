@@ -10,6 +10,8 @@ import {
   faExclamation,
   faSignOutAlt,
   faBars,
+  faHashtag,
+  faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import axios from 'axios';
@@ -28,6 +30,8 @@ library.add(
   faExclamation,
   faSignOutAlt,
   faBars,
+  faHashtag,
+  faPlus,
 );
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 axios.defaults.withCredentials = true;

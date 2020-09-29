@@ -44,12 +44,12 @@ $select-height: 40px;
 
 .select-icon-arrow {
   @include independent(transparent);
-  @include size(30px, 30px);
+  @include size(15px, 15px);
   @include flex-layout(row, center, center);
   color: $color_third;
   user-select: none;
-  right: 4px;
-  top: 4px;
+  right: 0px;
+  top: 25%;
   transform-origin: center;
   transform: rotateZ(90deg);
   font-size: 14px;
@@ -63,9 +63,20 @@ $select-height: 40px;
 }
 
 .option {
+  @include flex-layout(row, flex-start, center);
   cursor: pointer;
-  padding: 7px 0px 7px 0px;
-  background-color: #3a424f;
+  padding: 7px 0px 7px 40px;
+  background-color: rgba($color: #3a424f, $alpha: 0.3);
+  transition: 0.2s linear;
+
+  svg {
+    font-size: 12px;
+    margin-right: 6px;
+  }
+
+  &:hover {
+    background-color: rgba($color: #3a424f, $alpha: 1);
+  }
 }
 
 @for $i from 1 to 10 {

@@ -52,7 +52,7 @@ export default {
             y: 50,
             opacity: 0,
           },
-          '-=1',
+          '-=0',
         )
         .eventCallback('onStart', () => {
           vm.isAnimating = true;
@@ -70,10 +70,14 @@ export default {
           x: -500,
           duration: 0.75,
         })
-        .from('.register-close', {
-          opacity: 0,
-          x: -50,
-        })
+        .from(
+          '.register-close',
+          {
+            opacity: 0,
+            x: -50,
+          },
+          '-=0.1',
+        )
         .eventCallback('onStart', () => {
           vm.isAnimating = true;
         })

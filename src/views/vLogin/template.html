@@ -1,5 +1,7 @@
 <div id="main-login">
   <div class="window-box">
+    <div class="background-area" :class="clsLoginArea">
+    </div>
     <div class="register-area">
       <div class="register-close" @click="onRegisterCloseHandler">
         <font-awesome-icon icon="times" />
@@ -32,7 +34,7 @@
         </div>
       </div>
     </div>
-    <div class="login-area" :class="clsLoginArea">
+    <div class="login-area" >
       <div class="login-panel">
         <div class="title">
           <h3>LOGIN</h3>

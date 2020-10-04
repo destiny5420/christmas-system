@@ -9,6 +9,7 @@
 .window-box {
   // @include border();
   @include size(800px, 570px);
+  background-color: $color_orange;
   max-width: 800px;
   position: relative;
   overflow: hidden;
@@ -20,12 +21,27 @@
   transform: translate(-50%, -50%);
 }
 
+.background-area {
+  @include size(55%, 150%);
+  @include independent($color_blue_end);
+  z-index: 1;
+  top: -50px;
+  left: -42px;
+
+  transform-origin: center;
+  transform: rotateZ(-5deg);
+  transition: 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.background-area.register-status {
+  transform: rotateZ(5deg);
+}
+
 .register-area {
   @include flex-layout(column);
   position: relative;
+  z-index: 2;
   flex: 1;
-  z-index: -1;
-  background-color: $color_blue_end;
 }
 
 .register-close {
@@ -50,34 +66,9 @@
 .login-area {
   @include flex-layout(column);
   position: relative;
+  z-index: 2;
   flex: 1;
-  background-color: $color_orange;
-
   $extra_value: 100px;
-
-  &::before {
-    @include size(100px, calc(100% + #{$extra_value}));
-    @include independent();
-    background-color: $color_orange;
-    z-index: -1;
-    top: 0;
-    left: -25px;
-    transform-origin: center center;
-    transform: translateY(calc(#{$extra_value} * 0.5 * -1)) rotateZ(5deg);
-
-    transition: all 0.5s linear;
-  }
-
-  &.register-status::before {
-    @include size(100px, calc(100% + #{$extra_value}));
-    @include independent();
-    background-color: $color_blue_end;
-    z-index: 1;
-    top: 0;
-    left: -30px;
-    transform-origin: center center;
-    transform: translateY(calc(#{$extra_value} * 0.5 * -1)) rotateZ(-5deg);
-  }
 }
 
 .login-panel {

@@ -32,10 +32,30 @@ export default {
               text: 'Gift',
               icon: 'gift',
               info: [
-                { title: 'Create', path: '', icon: 'plus' },
-                { title: '75B5D', path: '', icon: 'hashtag' },
-                { title: 'A64F3', path: '', icon: 'hashtag' },
-                { title: 'J73FG', path: '', icon: 'hashtag' },
+                {
+                  title: 'Create',
+                  path: '',
+                  icon: 'plus',
+                  pushName: 'vDashboardCreateRoomGift',
+                },
+                {
+                  title: '75B5D',
+                  path: '',
+                  icon: 'hashtag',
+                  pushName: '',
+                },
+                {
+                  title: 'A64F3',
+                  path: '',
+                  icon: 'hashtag',
+                  pushName: '',
+                },
+                {
+                  title: 'J73FG',
+                  path: '',
+                  icon: 'hashtag',
+                  pushName: '',
+                },
               ],
             },
             {
@@ -144,6 +164,16 @@ export default {
         .catch((err) => {
           console.error(err);
         });
+    },
+    onTitleHandler: function() {
+      const vm = this;
+      const curRouteName = vm.$route.name;
+
+      if (curRouteName !== 'vDashboardHome') {
+        vm.$router.push({
+          name: 'vDashboardHome',
+        });
+      }
     },
   },
   computed: {},

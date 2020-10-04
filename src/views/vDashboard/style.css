@@ -81,6 +81,20 @@
   border-bottom: 1px solid rgba(105, 113, 128, 0.2);
 }
 
+.top-bar h4 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  -webkit-transition: 0.1s linear;
+  transition: 0.1s linear;
+}
+
+.top-bar h4:hover {
+  color: #b7c2d6;
+}
+
 .top-bar svg[name='close'] {
   cursor: pointer;
   -webkit-transition: 0.1s linear;

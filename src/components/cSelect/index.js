@@ -25,13 +25,20 @@ export default {
       const vm = this;
       vm.isOpen = !vm.isOpen;
     },
+    onGoHandler: function(name) {
+      const vm = this;
+      console.log('vm.prop_pushName: ', name);
+      vm.$router.push({
+        name: name,
+      });
+    },
   },
   computed: {
     classOptionBlock: {
       get: function() {
         const vm = this;
         return {
-          'block-open': vm.isOpen,
+          'block-close': !vm.isOpen,
           'option-count-1': vm.prop_options.length === 1,
           'option-count-2': vm.prop_options.length === 2,
           'option-count-3': vm.prop_options.length === 3,

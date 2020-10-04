@@ -1,6 +1,11 @@
 export default {
-  name: '{{ $javascriptName }}',
-  props: {},
+  name: 'cLoading',
+  props: {
+    prop_active: {
+      type: Boolean,
+      default: false,
+    },
+  },
   components: {},
   data: function() {
     return {};

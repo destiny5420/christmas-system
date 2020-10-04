@@ -51,7 +51,7 @@ $select-height: 40px;
   right: 0px;
   top: 25%;
   transform-origin: center;
-  transform: rotateZ(90deg);
+  transform: rotateZ(0deg);
   font-size: 14px;
   transition: 0.25s linear;
 }
@@ -85,10 +85,10 @@ $select-height: 40px;
   }
 }
 
-.block-open {
+.block-close {
   max-height: 0px;
 }
 
 .arrow-open {
-  transform: rotateZ(0deg);
+  transform: rotateZ(90deg);
 }

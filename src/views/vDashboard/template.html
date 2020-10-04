@@ -4,7 +4,7 @@
   </div>
   <div id="side-bar">
     <div class="top-bar">
-      <h4>{{ title }}</h4>
+      <h4 @click="onTitleHandler">{{ title }}</h4>
       <font-awesome-icon name="close" @click="onCloseSideBar" icon="times" />
     </div>
     <div class="user-info">
@@ -24,7 +24,12 @@
       <div class="select-item-title" v-for="(item, index) in optionData" :key="index">
         <h5>{{ item.title }}</h5>
         <div v-for="(cItem, cIndex) in item.Datas" :key="cIndex">
-          <cSelect :prop_options="cItem.info" :prop_content="cItem.text" :prop_icon="cItem.icon" />
+          <cSelect
+            :prop_options="cItem.info"
+            :prop_content="cItem.text"
+            :prop_icon="cItem.icon"
+            :prop_pushName="cItem.pushName"
+          />
         </div>
       </div>
     </div>

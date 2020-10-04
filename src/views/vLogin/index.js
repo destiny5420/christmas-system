@@ -150,7 +150,9 @@ export default {
         .then((response) => {
           console.log(response);
           if (response.data.success) {
-            this.$router.push({
+            // set cookie
+            // document.cookie = `client.id=${response.data.uid}; HttpOnly=true`;
+            vm.$router.push({
               name: 'vDashboard',
             });
           }

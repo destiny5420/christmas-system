@@ -79,6 +79,9 @@ $color_grey_cloud: #ccc;
 
 $color_font_main: #868e9c;
 
+// Z Index
+$zIndex_loading: 2000;
+
 // Mixin
 @mixin size($width: 100%, $height: 100%) {
   width: $width;

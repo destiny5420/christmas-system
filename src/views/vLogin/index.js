@@ -29,6 +29,9 @@ export default {
         loginPanelFadeIn: null,
         registerPanelFadeIn: null,
       },
+      status: {
+        registPanel: false,
+      },
     };
   },
   methods: {
@@ -49,7 +52,7 @@ export default {
             y: 50,
             opacity: 0,
           },
-          '-=1',
+          '-=0',
         )
         .eventCallback('onStart', () => {
           vm.isAnimating = true;
@@ -67,10 +70,14 @@ export default {
           x: -500,
           duration: 0.75,
         })
-        .from('.register-close', {
-          opacity: 0,
-          x: -50,
-        })
+        .from(
+          '.register-close',
+          {
+            opacity: 0,
+            x: -50,
+          },
+          '-=0.1',
+        )
         .eventCallback('onStart', () => {
           vm.isAnimating = true;
         })
@@ -81,7 +88,7 @@ export default {
     },
     onRegisterHandler: function() {
       const vm = this;
-      document.querySelector('.login-area').classList.add('register-status');
+      vm.status.registPanel = true;
       vm.anim.loginPanelFadeIn.reverse();
       vm.registerPanelFadeIn.play();
     },
@@ -92,7 +99,7 @@ export default {
         return;
       }
 
-      document.querySelector('.login-area').classList.remove('register-status');
+      vm.status.registPanel = false;
       vm.anim.loginPanelFadeIn.play();
       vm.registerPanelFadeIn.reverse();
       vm.onCleanSignUpDate();
@@ -188,7 +195,16 @@ export default {
         });
     },
   },
-  computed: {},
+  computed: {
+    clsLoginArea: {
+      get: function() {
+        const vm = this;
+        return {
+          'register-status': vm.status.registPanel,
+        };
+      },
+    },
+  },
   // life cycle
   beforeCreate: function() {},
   created: function() {},
